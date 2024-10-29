@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asignaturas y Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Listado de Asignaturas -->
+  <ion-card *ngFor="let asignatura of TodaAsignatura">
+    <ion-card-header>
+      <ion-card-title>{{ asignatura.nombre }}</ion-card-title>
+      <ion-card-subtitle>ID: {{ asignatura.siglas }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <!-- Listado de Secciones por Asignatura (Comprobación de existencia de SeccionesPorAsignatura y su longitud) -->
+    <ion-card-content *ngIf="SeccionesPorAsignatura && SeccionesPorAsignatura[asignatura.id] && SeccionesPorAsignatura[asignatura.id].length > 0">
+      <ion-list>
+        <ion-item *ngFor="let seccion of SeccionesPorAsignatura[asignatura.id]">
+          <ion-label>
+            Sección: {{ seccion.id }}
+          </ion-label>
+
+          <!-- Listado de Alumnos por Sección (Con comprobación adicional para evitar 'undefined') -->
+          <ion-list *ngIf="AlumnosPorSeccion && AlumnosPorSeccion[asignatura.id] && AlumnosPorSeccion[asignatura.id][seccion.id] && AlumnosPorSeccion[asignatura.id][seccion.id].length > 0">
+            <ion-item *ngFor="let alumno of AlumnosPorSeccion[asignatura.id][seccion.id]">
+              <ion-label>
+                Alumno: {{ alumno.nombre }} (ID: {{ alumno.id }})
+              </ion-label>
+
+              <!-- Estado de Asistencia del Alumno (Comprobación de existencia de AsistenciaPorAlumno) -->
+              <ion-badge *ngIf="AsistenciaPorAlumno && AsistenciaPorAlumno[asignatura.id] && AsistenciaPorAlumno[asignatura.id][seccion.id] && AsistenciaPorAlumno[asignatura.id][seccion.id][alumno.id]?.length > 0" color="success">
+                Asistencia: {{ AsistenciaPorAlumno[asignatura.id][seccion.id][alumno.id] }}
+              </ion-badge>
+              <ion-badge *ngIf="AsistenciaPorAlumno && (!AsistenciaPorAlumno[asignatura.id]?.[seccion.id]?.[alumno.id]?.length)" color="danger">
+                Sin asistencia
+              </ion-badge>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

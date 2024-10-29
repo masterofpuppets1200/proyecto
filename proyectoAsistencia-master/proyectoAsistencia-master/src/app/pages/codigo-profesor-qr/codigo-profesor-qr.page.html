@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="titulo"></ion-title>
+
+    <ion-button color="success" slot="end" [routerLink]="['/listado-profe']">
+      <ion-icon name="log-in-sharp" size="large"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container" [fullscreen]="true">
+  <qr-code [value]="valorQR" 
+         size="300" 
+         errorCorrectionLevel="M" />
+    <ion-input [(ngModel)]="valorQR"></ion-input>     
+</ion-content>

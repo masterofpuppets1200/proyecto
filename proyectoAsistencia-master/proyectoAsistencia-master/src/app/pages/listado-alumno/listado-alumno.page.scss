@@ -1,0 +1,38 @@
+.container{
+    text-align: center;
+    
+      width: 100%; /* O un valor fijo como 800px */
+      height: 100vh; /* O un valor fijo como 600px */
+      --background: none;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    
+}
+
+.boton{
+    text-align: center;
+}
+
+
+.icon-title-container {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .icon-title-container ion-icon {
+    margin-right: 8px; 
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente, si se desea */
+    margin-top: 20px; /* Espaciado opcional */
+  }
+  

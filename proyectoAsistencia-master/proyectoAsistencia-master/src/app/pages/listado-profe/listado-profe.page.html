@@ -1,0 +1,59 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="success">
+      <ion-title>Menu del Profesor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="icon-title-container">
+      <ion-icon name="person-sharp" size="large"></ion-icon>
+      <ion-card-title>{{usuario1}}</ion-card-title>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="qr-code-sharp" size="large"></ion-icon>
+      <ion-button [routerLink]="['/codigo-profesor-qr']">Generar QR</ion-button>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="book-sharp" size="large"></ion-icon>
+      <ion-button [routerLink]="['/lista-curso-profesor']">Lista de Curso</ion-button>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="calendar-sharp" size="large"></ion-icon>
+      <ion-button [routerLink]="['/informes-profesor']">Informe</ion-button>
+    </div>
+    <br>
+    <br>
+    <ion-button [routerLink]="['/login']">
+      <ion-icon name="log-in-sharp" size="large"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header [translucent]="true">
+    <ion-toolbar color="success">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu del Profesor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Bienvenido Profesor</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title>{{usuario1}}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+  </ion-content>
+</div>
+

@@ -1,0 +1,23 @@
+.asistencia-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clase {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  span {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+.titulo{
+    text-align: center;
+}

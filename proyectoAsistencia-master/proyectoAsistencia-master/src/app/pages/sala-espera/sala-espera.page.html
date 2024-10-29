@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title class="titulo">SALA DE ESPERA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding centrar-contenido">
+  <ion-card class="ion-text-center">
+    <ion-card-title>
+      <h2>Temporizador</h2>
+    </ion-card-title>
+
+    <ion-card class="temporizador">
+      <!-- Muestra el valor del temporizador -->
+      <div class="timer-container">
+        {{ tiempoTexto }}
+      </div>
+    </ion-card>
+    <ion-card><ion-progress-bar [value]="progreso"></ion-progress-bar></ion-card>
+  </ion-card>
+
+  <div class="titulo">
+    <ion-button color="tertiary" [routerLink]="['/registro-asistencia']" class="boton-presente">Presente</ion-button>
+  </div>
+</ion-content>
+
+

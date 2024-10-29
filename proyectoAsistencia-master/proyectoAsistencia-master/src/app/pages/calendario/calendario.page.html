@@ -1,0 +1,17 @@
+
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title class="titulo">Calendario</ion-title>
+    <ion-button color="tertiary" slot="end" [routerLink]="['/listado-alumno']">
+      <ion-icon name="log-in-sharp" size="large"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-datetime locale="es-ES"></ion-datetime>
+  </ion-card>
+</ion-content>

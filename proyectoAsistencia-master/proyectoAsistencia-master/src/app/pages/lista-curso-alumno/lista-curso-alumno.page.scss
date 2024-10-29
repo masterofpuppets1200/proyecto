@@ -1,0 +1,87 @@
+/* Fondo general y espacio entre elementos */
+ion-content {
+    padding: 15px;
+}
+
+/* Encabezado y barra de herramientas */
+ion-header {
+    --background: var(--ion-color-tertiary);
+}
+
+ion-toolbar {
+    --background: var(--ion-color-tertiary);
+}
+
+ion-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: right; /* Alineación a la derecha para el título */
+}
+
+ion-searchbar {
+    --background: #e6f7ff;
+    --placeholder-color: #007aff;
+    --color: #007aff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Listado de asignaturas */
+ion-list {
+    --background: #000000;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+ion-item {
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+ion-label h2 {
+    background-color: #007aff; /* Azul para asignaturas */
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: right; /* Alineación a la derecha para el nombre de la asignatura */
+}
+
+/* Fondo y estilo en los nombres de secciones y profesores */
+ion-label h3 {
+    background-color: #f39c12; /* Amarillo oscuro para secciones */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: right; /* Alineación a la derecha para el nombre de la sección */
+}
+
+ion-label h3.profesor {
+    background-color: #4a90e2; /* Azul claro para profesores */
+    padding: 5px;
+    border-radius: 5px;
+    text-align: right; /* Alineación a la derecha para el nombre del profesor */
+}
+
+/* Detalle de alumnos */
+ion-item ion-label p {
+    font-size: 0.9em;
+    text-align: right; /* Alineación a la derecha para detalles de alumnos */
+}
+
+/* Estado de asistencia con color de fondo */
+ion-item p.estado-presente {
+    background-color: #28a745; /* Verde para presente */
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: right; /* Alineación a la derecha para estado presente */
+}
+
+ion-item p.estado-ausente {
+    background-color: #dc3545; /* Rojo para ausente */
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: right; /* Alineación a la derecha para estado ausente */
+}

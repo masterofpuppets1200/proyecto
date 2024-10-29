@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="center">DESCARGAR INFORMES</ion-title>
+    <ion-button color="success"slot="end" [routerLink]="['/listado-profe']">
+      <ion-icon name="log-in-sharp" size="large"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>
+            <div class="icon-title-container">
+              <ion-icon name="reader-sharp" size="large"></ion-icon>
+              <ion-button (click)="generatePDF()">imprimir PDF</ion-button>
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="icon-title-container">
+              <ion-icon name="reader-sharp" size="large"></ion-icon>
+              <ion-button (click)="generateWord()">imprimir Word</ion-button>
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="icon-title-container">
+              <ion-icon name="reader-sharp" size="large"></ion-icon>
+              <ion-button (click)="generateExcel()">imprimir Excel</ion-button>
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+  
+
+
+
+
+
+
+

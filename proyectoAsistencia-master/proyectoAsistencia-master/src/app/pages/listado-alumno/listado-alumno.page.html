@@ -1,0 +1,69 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Menu Alumno</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <p></p>
+    <div class="icon-title-container">
+      <ion-icon name="person-sharp" size="large"></ion-icon>
+      <ion-card-title>{{usuario2}}</ion-card-title>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="qr-code-sharp" size="large"></ion-icon>
+      <ion-button [routerLink]="['/codigo-alumno-qr']">Escanear QR</ion-button>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="book-sharp" size="large"></ion-icon>
+      <ion-button [routerLink]="['/lista-curso-alumno']">Lista de Curso</ion-button>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="calendar-sharp"size="large"></ion-icon>
+      <ion-button [routerLink]="['/calendario']">calendario</ion-button>
+    </div>
+    <br>
+    <div class="icon-title-container">
+      <ion-icon name="checkbox-sharp"size="large"></ion-icon>
+      <ion-button [routerLink]="['/porcentaje']">asistencia</ion-button>
+    </div>
+    <br><br>
+    <ion-button [routerLink]="['/login']"><ion-icon name="log-in-sharp" size="large"></ion-icon></ion-button>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header [translucent]="true">
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu Alumno</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Bienvenido Alumno</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title>{{usuario2}}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+      <div>
+        <ion-card>
+          Mis Asignaturas 
+        </ion-card> 
+        <ion-card>
+          Clase en porgreso
+        </ion-card>
+      </div>
+      
+    </div>
+  </ion-content>
+</div>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Lista de Cursos y Alumnos</ion-title>
+    <ion-button color="tertiary" slot="end" [routerLink]="['/listado-alumno']">
+      <ion-icon name="log-in-sharp" size="large"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Barra de búsqueda -->
+  <ion-searchbar (ionInput)="filtrarPorAsignatura($event)"></ion-searchbar>
+
+  <!-- Listado de asignaturas -->
+  <ion-list [inset]="true">
+    <ion-item *ngFor="let asignatura of filtradaAsignaturas">
+      <ion-label>
+        <h2>Asignatura: {{ asignatura.nombre }}</h2>
+        <h2> {{ asignatura.id }}</h2>
+      </ion-label>
+
+      <!-- Listado de secciones dentro de cada asignatura -->
+      <ion-list *ngIf="asignatura.seccionesFiltradas.length > 0" lines="none">
+        <ion-item *ngFor="let seccion of asignatura.seccionesFiltradas">
+          <ion-label>
+            <h3>Sección:{{ seccion.id }}</h3>
+            <h3>Profesor:{{ seccion.profesor }}</h3>
+          </ion-label>
+          <!-- Listado de alumnos dentro de cada sección -->
+          <ion-list *ngIf="AlumnosPorSeccion[asignatura.id] && AlumnosPorSeccion[asignatura.id][seccion.id]" lines="none">
+            <ion-item *ngFor="let alumno of AlumnosPorSeccion[asignatura.id][seccion.id]">
+              <ion-label>
+                <h2>Alumno:{{ alumno.id }}</h2>
+              </ion-label>
+              <ion-list *ngIf="AsistenciaPorAlumno[asignatura.id] && AsistenciaPorAlumno[asignatura.id][seccion.id] && AsistenciaPorAlumno[asignatura.id][seccion.id][alumno.id]" lines="none">
+                <ion-item *ngFor="let asi of AsistenciaPorAlumno[asignatura.id][seccion.id][alumno.id]">
+                  <ion-label>
+                    <h3>Fecha de Asistencia: {{ asi.fecha }}</h3>
+                    <h3>Estado: {{ asi.Estado }}</h3>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+

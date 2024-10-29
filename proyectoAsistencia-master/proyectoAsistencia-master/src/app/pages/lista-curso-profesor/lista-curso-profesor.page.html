@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="titulo">Lista Clases</ion-title>
+    <ion-button color="success" slot="end" [routerLink]="['/listado-profe']">
+      <ion-icon name="log-in-sharp" size="large"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-searchbar (ionInput)="filtrarPorAsignatura($event)" placeholder="Buscar asignatura o sección" debounce="300"></ion-searchbar>
+    <ion-list [inset]="true">
+      <ion-item *ngFor="let asignatura of filtradaAsignaturas">
+        <h2>{{ asignatura.id }}</h2>
+        <ion-list *ngIf="asignatura.seccionesFiltradas && asignatura.seccionesFiltradas.length > 0">
+          <ion-item *ngFor="let seccion of asignatura.seccionesFiltradas">
+            <h2>Sección: {{ seccion.id }}</h2>
+            <ion-list *ngIf="AlumnosPorSeccion && AlumnosPorSeccion[asignatura.id] && AlumnosPorSeccion[asignatura.id][seccion.id]">
+              <ion-item *ngFor="let alumno of AlumnosPorSeccion[asignatura.id][seccion.id]">
+                <h2>Alumno: {{ alumno.id }}</h2>
+              </ion-item>
+            </ion-list>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
+
+
+
+<style>
+  ion-header {
+    --background: #2a9d8f;
+    color: #fff;
+  }
+
+  .titulo {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: white;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  ion-content {
+    --background: #f7f7f7;
+    padding: 1em;
+  }
+
+  ion-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  ion-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+
+  ion-item h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  ion-icon {
+    color: white;
+  }
+</style>

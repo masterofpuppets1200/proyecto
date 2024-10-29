@@ -1,0 +1,15 @@
+.titulo{
+    text-align: center;
+}
+.centrar-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .custom-datetime {
+    font-size: 1.5rem; /* Tamaño del texto más grande */
+    color: #007aff; /* Color más llamativo */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    padding: 20px;
+  }
